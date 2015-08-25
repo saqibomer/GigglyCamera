@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA969A541B8C93710095CF80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA969A531B8C93710095CF80 /* AppDelegate.swift */; };
+		AA969A571B8C93710095CF80 /* GigglyCamera.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA969A551B8C93710095CF80 /* GigglyCamera.xcdatamodeld */; };
+		AA969A591B8C93710095CF80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA969A581B8C93710095CF80 /* ViewController.swift */; };
+		AA969A5C1B8C93710095CF80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA969A5A1B8C93710095CF80 /* Main.storyboard */; };
+		AA969A5E1B8C93710095CF80 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA969A5D1B8C93710095CF80 /* Images.xcassets */; };
+		AA969A611B8C93710095CF80 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA969A5F1B8C93710095CF80 /* LaunchScreen.xib */; };
+		AA969A6D1B8C93710095CF80 /* GigglyCameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA969A6C1B8C93710095CF80 /* GigglyCameraTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA969A671B8C93710095CF80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA969A461B8C93710095CF80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA969A4D1B8C93710095CF80;
+			remoteInfo = GigglyCamera;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA969A4E1B8C93710095CF80 /* GigglyCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GigglyCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA969A521B8C93710095CF80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA969A531B8C93710095CF80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AA969A561B8C93710095CF80 /* GigglyCamera.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GigglyCamera.xcdatamodel; sourceTree = "<group>"; };
+		AA969A581B8C93710095CF80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA969A5B1B8C93710095CF80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AA969A5D1B8C93710095CF80 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AA969A601B8C93710095CF80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		AA969A661B8C93710095CF80 /* GigglyCameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GigglyCameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA969A6B1B8C93710095CF80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA969A6C1B8C93710095CF80 /* GigglyCameraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigglyCameraTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA969A4B1B8C93710095CF80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA969A631B8C93710095CF80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA969A451B8C93710095CF80 = {
+			isa = PBXGroup;
+			children = (
+				AA969A501B8C93710095CF80 /* GigglyCamera */,
+				AA969A691B8C93710095CF80 /* GigglyCameraTests */,
+				AA969A4F1B8C93710095CF80 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA969A4F1B8C93710095CF80 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA969A4E1B8C93710095CF80 /* GigglyCamera.app */,
+				AA969A661B8C93710095CF80 /* GigglyCameraTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA969A501B8C93710095CF80 /* GigglyCamera */ = {
+			isa = PBXGroup;
+			children = (
+				AA969A531B8C93710095CF80 /* AppDelegate.swift */,
+				AA969A581B8C93710095CF80 /* ViewController.swift */,
+				AA969A5A1B8C93710095CF80 /* Main.storyboard */,
+				AA969A5D1B8C93710095CF80 /* Images.xcassets */,
+				AA969A5F1B8C93710095CF80 /* LaunchScreen.xib */,
+				AA969A551B8C93710095CF80 /* GigglyCamera.xcdatamodeld */,
+				AA969A511B8C93710095CF80 /* Supporting Files */,
+			);
+			path = GigglyCamera;
+			sourceTree = "<group>";
+		};
+		AA969A511B8C93710095CF80 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA969A521B8C93710095CF80 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA969A691B8C93710095CF80 /* GigglyCameraTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA969A6C1B8C93710095CF80 /* GigglyCameraTests.swift */,
+				AA969A6A1B8C93710095CF80 /* Supporting Files */,
+			);
+			path = GigglyCameraTests;
+			sourceTree = "<group>";
+		};
+		AA969A6A1B8C93710095CF80 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA969A6B1B8C93710095CF80 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA969A4D1B8C93710095CF80 /* GigglyCamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA969A701B8C93710095CF80 /* Build configuration list for PBXNativeTarget "GigglyCamera" */;
+			buildPhases = (
+				AA969A4A1B8C93710095CF80 /* Sources */,
+				AA969A4B1B8C93710095CF80 /* Frameworks */,
+				AA969A4C1B8C93710095CF80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GigglyCamera;
+			productName = GigglyCamera;
+			productReference = AA969A4E1B8C93710095CF80 /* GigglyCamera.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA969A651B8C93710095CF80 /* GigglyCameraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA969A731B8C93710095CF80 /* Build configuration list for PBXNativeTarget "GigglyCameraTests" */;
+			buildPhases = (
+				AA969A621B8C93710095CF80 /* Sources */,
+				AA969A631B8C93710095CF80 /* Frameworks */,
+				AA969A641B8C93710095CF80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA969A681B8C93710095CF80 /* PBXTargetDependency */,
+			);
+			name = GigglyCameraTests;
+			productName = GigglyCameraTests;
+			productReference = AA969A661B8C93710095CF80 /* GigglyCameraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA969A461B8C93710095CF80 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Kaboom Labs";
+				TargetAttributes = {
+					AA969A4D1B8C93710095CF80 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					AA969A651B8C93710095CF80 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = AA969A4D1B8C93710095CF80;
+					};
+				};
+			};
+			buildConfigurationList = AA969A491B8C93710095CF80 /* Build configuration list for PBXProject "GigglyCamera" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA969A451B8C93710095CF80;
+			productRefGroup = AA969A4F1B8C93710095CF80 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA969A4D1B8C93710095CF80 /* GigglyCamera */,
+				AA969A651B8C93710095CF80 /* GigglyCameraTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA969A4C1B8C93710095CF80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA969A5C1B8C93710095CF80 /* Main.storyboard in Resources */,
+				AA969A611B8C93710095CF80 /* LaunchScreen.xib in Resources */,
+				AA969A5E1B8C93710095CF80 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA969A641B8C93710095CF80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA969A4A1B8C93710095CF80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA969A591B8C93710095CF80 /* ViewController.swift in Sources */,
+				AA969A541B8C93710095CF80 /* AppDelegate.swift in Sources */,
+				AA969A571B8C93710095CF80 /* GigglyCamera.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA969A621B8C93710095CF80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA969A6D1B8C93710095CF80 /* GigglyCameraTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA969A681B8C93710095CF80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA969A4D1B8C93710095CF80 /* GigglyCamera */;
+			targetProxy = AA969A671B8C93710095CF80 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AA969A5A1B8C93710095CF80 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA969A5B1B8C93710095CF80 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AA969A5F1B8C93710095CF80 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA969A601B8C93710095CF80 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA969A6E1B8C93710095CF80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA969A6F1B8C93710095CF80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA969A711B8C93710095CF80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GigglyCamera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AA969A721B8C93710095CF80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GigglyCamera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AA969A741B8C93710095CF80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GigglyCameraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GigglyCamera.app/GigglyCamera";
+			};
+			name = Debug;
+		};
+		AA969A751B8C93710095CF80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GigglyCameraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GigglyCamera.app/GigglyCamera";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA969A491B8C93710095CF80 /* Build configuration list for PBXProject "GigglyCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA969A6E1B8C93710095CF80 /* Debug */,
+				AA969A6F1B8C93710095CF80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA969A701B8C93710095CF80 /* Build configuration list for PBXNativeTarget "GigglyCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA969A711B8C93710095CF80 /* Debug */,
+				AA969A721B8C93710095CF80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AA969A731B8C93710095CF80 /* Build configuration list for PBXNativeTarget "GigglyCameraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA969A741B8C93710095CF80 /* Debug */,
+				AA969A751B8C93710095CF80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AA969A551B8C93710095CF80 /* GigglyCamera.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AA969A561B8C93710095CF80 /* GigglyCamera.xcdatamodel */,
+			);
+			currentVersion = AA969A561B8C93710095CF80 /* GigglyCamera.xcdatamodel */;
+			path = GigglyCamera.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AA969A461B8C93710095CF80 /* Project object */;
+}
