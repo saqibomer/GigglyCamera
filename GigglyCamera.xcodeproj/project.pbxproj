@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AA969A541B8C93710095CF80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA969A531B8C93710095CF80 /* AppDelegate.swift */; };
 		AA969A571B8C93710095CF80 /* GigglyCamera.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA969A551B8C93710095CF80 /* GigglyCamera.xcdatamodeld */; };
-		AA969A591B8C93710095CF80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA969A581B8C93710095CF80 /* ViewController.swift */; };
+		AA969A591B8C93710095CF80 /* GigglyCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA969A581B8C93710095CF80 /* GigglyCameraViewController.swift */; };
 		AA969A5C1B8C93710095CF80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA969A5A1B8C93710095CF80 /* Main.storyboard */; };
 		AA969A5E1B8C93710095CF80 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA969A5D1B8C93710095CF80 /* Images.xcassets */; };
 		AA969A611B8C93710095CF80 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA969A5F1B8C93710095CF80 /* LaunchScreen.xib */; };
@@ -31,7 +31,7 @@
 		AA969A521B8C93710095CF80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA969A531B8C93710095CF80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA969A561B8C93710095CF80 /* GigglyCamera.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GigglyCamera.xcdatamodel; sourceTree = "<group>"; };
-		AA969A581B8C93710095CF80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA969A581B8C93710095CF80 /* GigglyCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigglyCameraViewController.swift; sourceTree = "<group>"; };
 		AA969A5B1B8C93710095CF80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA969A5D1B8C93710095CF80 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AA969A601B8C93710095CF80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				AA969A531B8C93710095CF80 /* AppDelegate.swift */,
-				AA969A581B8C93710095CF80 /* ViewController.swift */,
+				AA969A581B8C93710095CF80 /* GigglyCameraViewController.swift */,
 				AA969A5A1B8C93710095CF80 /* Main.storyboard */,
 				AA969A5D1B8C93710095CF80 /* Images.xcassets */,
 				AA969A5F1B8C93710095CF80 /* LaunchScreen.xib */,
@@ -215,7 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA969A591B8C93710095CF80 /* ViewController.swift in Sources */,
+				AA969A591B8C93710095CF80 /* GigglyCameraViewController.swift in Sources */,
 				AA969A541B8C93710095CF80 /* AppDelegate.swift in Sources */,
 				AA969A571B8C93710095CF80 /* GigglyCamera.xcdatamodeld in Sources */,
 			);
