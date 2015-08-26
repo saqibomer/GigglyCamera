@@ -15,11 +15,61 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBI-0c-hPB">
+                                <rect key="frame" x="275" y="530" width="50" height="50"/>
+                                <state key="normal" image="cameraIcon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didtakePicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MHk-6P-onP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GBI-0c-hPB" secondAttribute="bottom" constant="20" id="GT4-Gl-lQp"/>
+                            <constraint firstAttribute="centerX" secondItem="GBI-0c-hPB" secondAttribute="centerX" id="JNd-yb-VM0"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Image Preview View Controller-->
+        <scene sceneID="JpC-Yv-R0Y">
+            <objects>
+                <viewController storyboardIdentifier="previewView" id="7Jo-2c-ofa" customClass="ImagePreviewViewController" customModule="GigglyCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cDU-XX-4zA"/>
+                        <viewControllerLayoutGuide type="bottom" id="8US-fS-bgK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Ij-ic-EZg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yzr-ev-9SO">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yzr-ev-9SO" firstAttribute="leading" secondItem="3Ij-ic-EZg" secondAttribute="leading" id="Jrw-s9-1Lk"/>
+                            <constraint firstAttribute="trailing" secondItem="yzr-ev-9SO" secondAttribute="trailing" id="Lnt-JQ-VBf"/>
+                            <constraint firstItem="yzr-ev-9SO" firstAttribute="top" secondItem="3Ij-ic-EZg" secondAttribute="top" id="gJU-6b-Xe9"/>
+                            <constraint firstItem="8US-fS-bgK" firstAttribute="top" secondItem="yzr-ev-9SO" secondAttribute="bottom" id="phx-uP-QJG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="yzr-ev-9SO" id="fr6-9R-kaW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KR2-0P-yid" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1011" y="387"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="cameraIcon" width="50" height="50"/>
+    </resources>
 </document>
