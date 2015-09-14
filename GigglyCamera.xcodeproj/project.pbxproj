@@ -15,6 +15,7 @@
 		AA969A611B8C93710095CF80 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA969A5F1B8C93710095CF80 /* LaunchScreen.xib */; };
 		AA969A6D1B8C93710095CF80 /* GigglyCameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA969A6C1B8C93710095CF80 /* GigglyCameraTests.swift */; };
 		AAADFB131B8DD63E00A0D7B6 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAADFB121B8DD63E00A0D7B6 /* ImagePreviewViewController.swift */; };
+		AAAF863D1BA2D22A00AEDDAE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAF863C1BA2D22A00AEDDAE /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		AA969A6B1B8C93710095CF80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA969A6C1B8C93710095CF80 /* GigglyCameraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigglyCameraTests.swift; sourceTree = "<group>"; };
 		AAADFB121B8DD63E00A0D7B6 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
+		AAAF863C1BA2D22A00AEDDAE /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				AA969A5F1B8C93710095CF80 /* LaunchScreen.xib */,
 				AA969A551B8C93710095CF80 /* GigglyCamera.xcdatamodeld */,
 				AA969A511B8C93710095CF80 /* Supporting Files */,
+				AAAF863C1BA2D22A00AEDDAE /* CameraViewController.swift */,
 			);
 			path = GigglyCamera;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA969A591B8C93710095CF80 /* GigglyCameraViewController.swift in Sources */,
+				AAAF863D1BA2D22A00AEDDAE /* CameraViewController.swift in Sources */,
 				AA969A541B8C93710095CF80 /* AppDelegate.swift in Sources */,
 				AAADFB131B8DD63E00A0D7B6 /* ImagePreviewViewController.swift in Sources */,
 				AA969A571B8C93710095CF80 /* GigglyCamera.xcdatamodeld in Sources */,

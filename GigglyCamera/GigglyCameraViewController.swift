@@ -14,40 +14,66 @@ import AVFoundation
 class GigglyCameraViewController: UIViewController {
     
     // Properties
-//    var selectedDevice: AVCaptureDevice? = nil;
-//    let captureSession = AVCaptureSession();
-//    var previewLayer: AVCaptureVideoPreviewLayer? = nil;
-//    var observer:NSObjectProtocol? = nil
-//    let stillImageOutput = AVCaptureStillImageOutput()
-//    
-//    
-//    var cameraIconBgView : UIView!
-//    var captureButton : UIButton!
-//    var previewImage : UIImageView!
-//    var capturedImage : UIImage!
-//    
-//    // Backgroundview for preview layer
-//    var bgView : UIView!
+    
+    
+    @IBOutlet weak var cameraPreview: UIView!
+    //Holds Captured Image
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var drawerButton: UIButton! // Drawer button to show/ hide imagesContainerView
+    @IBOutlet weak var imagesContainerView: UIView! // Holds captured images
+    @IBOutlet weak var imagesContainerBottomConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var drawerButtonBottomConstraint: NSLayoutConstraint!
+    
+    let swipeUp = UISwipeGestureRecognizer() // Swipe Up gesture recognizer
+    let swipeDown = UISwipeGestureRecognizer() // Swipe Down gesture recognizer
+    
+    let captureSession = AVCaptureSession()
+    var previewLayer : AVCaptureVideoPreviewLayer?
+    var captureDevice : AVCaptureDevice?
+    var devices = AVCaptureDevice.devices()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        captureSession.sessionPreset = AVCaptureSessionPresetPhoto;
-//        selectedDevice = findCameraWithPosition(.Back);
-//        
-//        processOrientationNotifications();
-//        
+        
+        // Initialiaze Capture Session
+        captureSession.sessionPreset = AVCaptureSessionPresetHigh
+        
+        
+        
+        // Loop through all the capture devices on this phone
+        for device in devices {
+            // Make sure this particular device supports video
+            if (device.hasMediaType(AVMediaTypeVideo)) {
+                // Finally check the position and confirm we've got the back camera
+                if(device.position == AVCaptureDevicePosition.Back) {
+                    captureDevice = device as? AVCaptureDevice
+                    if captureDevice != nil {
+                        println("Capture device found")
+                        beginSession()
+                    }
+                }
+            }
+        }
+        
+        
+        
+        // Swipe Gesture
+        swipeUp.direction = UISwipeGestureRecognizerDirection.Up
+        swipeUp.addTarget(self, action: "swipedViewUp")
+        drawerButton.addGestureRecognizer(swipeUp)
+        
+        swipeDown.direction = UISwipeGestureRecognizerDirection.Down
+        swipeDown.addTarget(self, action: "swipedViewDown")
+        drawerButton.addGestureRecognizer(swipeDown)
+        
+        
+        
+        
         
         
     }
     
-//    deinit {
-//        // Cleanup
-//        if observer != nil {
-//            NSNotificationCenter.defaultCenter().removeObserver(observer!);
-//        }
-//        
-//        UIDevice.currentDevice().endGeneratingDeviceOrientationNotifications();
-//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -55,8 +81,7 @@ class GigglyCameraViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        
-//        self.previewLayer?.bounds = self.view.bounds
+        self.previewLayer?.frame = CGRect(x: 0.0, y: 50.0, width: cameraPreview.frame.width, height: cameraPreview.frame.height)
         
     }
     
@@ -67,128 +92,175 @@ class GigglyCameraViewController: UIViewController {
         return true
     }
     
-    // Stop Session and remove view from super view
-    func stopSession(){
+    
+    func updateDeviceSettings(focusValue : Float, isoValue : Float) {
+        if let device = captureDevice {
+            if(device.lockForConfiguration(nil)) {
+                device.setFocusModeLockedWithLensPosition(focusValue, completionHandler: { (time) -> Void in
+                    //
+                })
+                
+                // Adjust the iso to clamp between minIso and maxIso based on the active format
+                let minISO = device.activeFormat.minISO
+                let maxISO = device.activeFormat.maxISO
+                let clampedISO = isoValue * (maxISO - minISO) + minISO
+                
+                device.setExposureModeCustomWithDuration(AVCaptureExposureDurationCurrent, ISO: clampedISO, completionHandler: { (time) -> Void in
+                    //
+                })
+                
+                device.unlockForConfiguration()
+            }
+        }
+    }
+    
+    func touchPercent(touch : UITouch) -> CGPoint {
+        // Get the dimensions of the screen in points
+        let screenSize = UIScreen.mainScreen().bounds.size
         
-       
-//        self.captureSession.stopRunning()
-//        self.captureButton.removeFromSuperview()
-//        self.previewLayer?.removeFromSuperlayer()
-//        
-//        // Show Preview of Image
-//        
-//        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("previewView") as! ImagePreviewViewController
-////        println("captured Image \(capturedImage)")
-//        vc.cameraImage = capturedImage
-//        
-////        println("camera Image = \(vc.cameraImage)")
-////        self.presentedViewController?.modalPresentationStyle = UIModalPresentationStyle.OverFullScreen
-//        self.presentViewController(vc, animated: true, completion: nil)
+        // Create an empty CGPoint object set to 0, 0
+        var touchPer = CGPointZero
         
+        // Set the x and y values to be the value of the tapped position, divided by the width/height of the screen
+        touchPer.x = touch.locationInView(self.view).x / screenSize.width
+        touchPer.y = touch.locationInView(self.view).y / screenSize.height
+        
+        // Return the populated CGPoint
+        return touchPer
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        let touchPer = touchPercent((touches.first as? UITouch)! )
+        //focusTo(Float(touchPer.x))
+        updateDeviceSettings(Float(touchPer.x), isoValue: Float(touchPer.y))
+    }
+    
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        let touchPer = touchPercent( (touches.first as? UITouch)! )
+        //focusTo(Float(touchPer.x))
+        updateDeviceSettings(Float(touchPer.x), isoValue: Float(touchPer.y))
+    }
+    
+    
+    
+    
+    func configureDevice() {
+        if let device = captureDevice {
+            device.lockForConfiguration(nil)
+            if device.isFocusModeSupported(.Locked) {
+               device.focusMode = .Locked
+            }
             
-    }
-    
-    func getImage() {
-//        
-//        if let videoConnection = stillImageOutput.connectionWithMediaType(AVMediaTypeVideo) {
-//            stillImageOutput.captureStillImageAsynchronouslyFromConnection(videoConnection) {
-//                (imageDataSampleBuffer, error) -> Void in
-//                let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
-////                UIImageWriteToSavedPhotosAlbum(UIImage(data: imageData), nil, nil, nil)
-//                
-//                self.capturedImage = UIImage(data: imageData)
-//                self.stopSession()
-//                
-//            }
-//        }
+            device.unlockForConfiguration()
+        }
         
     }
-    
-    // Capture Image
-    
-    func captureImage () {
+
+    func switchCamera() {
         
-//        stillImageOutput.outputSettings = [AVVideoCodecKey:AVVideoCodecJPEG]
-//        if captureSession.canAddOutput(stillImageOutput) {
-//            captureSession.addOutput(stillImageOutput)
-//        }
-//        
-//        
-//        var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("getImage"), userInfo: nil, repeats: false)
-//        
+        var inputs = captureSession.inputs
         
+        for input in inputs {
+//            self.captureSession.removeInput(input as! AVCaptureInput)
+            println(input)
+            for device in devices {
+                // Make sure this particular device supports video
+                if (device.hasMediaType(AVMediaTypeVideo)) {
+                    // Finally check the position and confirm we've got the back camera
+                    if(device.position == AVCaptureDevicePosition.Back) {
+                        captureDevice = device as? AVCaptureDevice
+                        if captureDevice != nil {
+                            println(captureDevice)
+                            
+                            
+                            beginSession()
+                        }
+                    }
+                }
+            }
+
+        }
+//        self.previewLayer?.removeFromSuperlayer()
+//        self.captureSession.stopRunning()
         
-        
-        
-        
-    }
-    
-//    func findCameraWithPosition(position: AVCaptureDevicePosition) -> AVCaptureDevice? {
-//        let devices = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo);
-//        for device in devices as! [AVCaptureDevice] {
-//            if(device.position == position) {
-//                return device;
-//            }
-//        }
-//        
-//        return nil;
-//    }
-    
-    func startCapture() {
-//        if let device = selectedDevice {
-//            var err : NSError? = nil
-//            captureSession.addInput(AVCaptureDeviceInput(device: device, error: &err))
-//            
-//            if err != nil {
-//                println("error: \(err?.localizedDescription)")
-//            }
-//            
-//            
-//            // Add BackgroundView
-//            self.bgView  =  UIView(frame: self.view.frame)
-//            self.bgView.backgroundColor = UIColor.blackColor()
-//            previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-//            captureButton = UIButton(frame: CGRect(x: self.view.frame.width / 2 - 25, y: self.view.frame.height - 60, width: 50, height: 50))
-//            captureButton.setImage(UIImage(named: "cameraIcon")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), forState: UIControlState.Normal)
-//            captureButton.addTarget(self, action: "captureImage", forControlEvents: UIControlEvents.TouchUpInside)
-//            self.view.addSubview(bgView)
-//            self.bgView.layer.addSublayer(previewLayer)
-//            previewLayer?.frame = self.view.layer.frame;
-//            self.bgView.addSubview(captureButton)
-//            captureSession.startRunning()
-//        }
         
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-//        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator);
-//        if let layer = previewLayer {
-//            layer.frame = CGRectMake(0,0,size.width, size.height);
-//        }
+    func beginSession() {
+        
+        configureDevice()
+        
+        var err : NSError? = nil
+        captureSession.addInput(AVCaptureDeviceInput(device: captureDevice, error: &err))
+        
+        if err != nil {
+            println("error: \(err?.localizedDescription)")
+        }
+        
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        cameraPreview.layer.zPosition = -1
+        previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+        self.cameraPreview.layer.addSublayer(previewLayer)
+        captureSession.startRunning()
     }
     
-    func processOrientationNotifications() {
-//        UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications();
-//        observer = NSNotificationCenter.defaultCenter().addObserverForName(UIDeviceOrientationDidChangeNotification, object: nil, queue: NSOperationQueue.mainQueue()) { [unowned self](notification: NSNotification!) -> Void in
-//            if let layer = self.previewLayer {
-//                switch UIDevice.currentDevice().orientation {
-//                case .LandscapeLeft: layer.connection.videoOrientation = .LandscapeRight;
-//                case .LandscapeRight: layer.connection.videoOrientation = .LandscapeLeft;
-//                default: layer.connection.videoOrientation = .Portrait;
+    func switchCameraDevice() {
+        
+        
+        
+        switchCamera()
+        
+        // Loop through all the capture devices on this phone
+//        for device in devices {
+//            // Make sure this particular device supports video
+//            if (device.hasMediaType(AVMediaTypeVideo)) {
+//                // Finally check the position and confirm we've got the back camera
+//                if(device.position == AVCaptureDevicePosition.Front) {
+//                    captureDevice = device as? AVCaptureDevice
+//                    if captureDevice != nil {
+//                        println(captureDevice)
+//                        
+//                        
+//                        beginSession()
+//                    }
 //                }
 //            }
 //        }
+        
     }
     
+    @IBAction func switchCameraAction(sender: AnyObject) {
+        
+        switchCameraDevice()
+    }
     
-    
+    // Mark: Start Camera
     @IBAction func didtakePicture(sender: AnyObject) {
         
-//        startCapture();
         
         
     }
     
+    
+    func swipedViewUp(){
+        
+        self.imagesContainerBottomConstraint.constant = +100
+        self.drawerButtonBottomConstraint.constant = 112
+        self.drawerButton.setImage(UIImage(named: "dragIcon"), forState: UIControlState.Normal)
+        
+        
+        println("Swiped Up")
+    }
+    
+    func swipedViewDown(){
+        
+        self.imagesContainerBottomConstraint.constant = -100
+        self.drawerButtonBottomConstraint.constant = 0
+        self.drawerButton.setImage(UIImage(named: "dragIconUp"), forState: UIControlState.Normal)
+        
+        
+        println("Swiped Down")
+    }
     
 
 
